@@ -1,1 +1,5 @@
 outputs/
+debug/
+target/
+
+Cargo.lock
