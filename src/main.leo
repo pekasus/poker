@@ -38,7 +38,7 @@ circuit Hand {
                 return (true);
             }
         }
-        return false
+        return false;
     }
 }
 
