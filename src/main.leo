@@ -25,10 +25,20 @@ circuit Card {
 }
 
 circuit Hand {
-    cards [Card; 5];
+    owner: address;
+    cards: [u8; 5];
 
-    function is_three_of_kind(const self) -> bool {
-
+    function three_of_kind(const self) -> bool {
+        let suits: [u8; 4] = [0; 4];
+        for i in 0..5 {
+            let card_index = self.cards[i];
+            let suit = card_index % 4;
+            suits[suit] += 1;
+            if suits[suit] == 3 {
+                return (true);
+            }
+        }
+        return false;
     }
 }
 
